@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{% block title %} Common allergens {% endblock %}</h1>
+
+<button class="options" onclick="location.href='{{ url_for('pollen')}}'" type="button">
+    <div class="next_to">
+    <div class="vertical_blocker">pollen</div>
+    <img src="static/images/pollen.png" alt="pollen button" style="width:256px;height:256px;">
+    </div>
+</button>
+<br>
+<br>
+<button class="options" onclick="location.href='{{ url_for('dust')}}'" type="button">
+ <div class="next_to">
+    <div class="vertical_blocker">dust</div>
+    <img src="static/images/dust.png" alt="dust button" style="width:256px;height:256px;">
+    </div>
+</button>
+<br>
+<br>
+<button class="options" onclick="location.href='{{ url_for('pets')}}'" type="button">
+     <div class="next_to">
+    <div class="vertical_blocker">pets</div>
+    <img src="static/images/pets.png" alt="pets button" style="width:256px;height:256px;">
+    </div>
+</button>
+<br>
+<br>
+<button class="options" onclick="location.href='{{ url_for('smoke')}}'" type="button">
+     <div class="next_to">
+    <div class="vertical_blocker">cigarette smoke</div>
+    <img src="static/images/cigarette.png" alt="cigarette smoke button" style="width:256px;height:256px;">
+    </div>
+</button>
+<br>
+<br>
+<button class="options" onclick="location.href='{{ url_for('asthma')}}'" type="button">
+     <div class="next_to">
+    <div class="vertical_blocker">asthma</div>
+    <img src="static/images/cough.png" alt="asthma button" style="width:256px;height:256px;">
+    </div>
+</button>
+
+
+
+{% endblock %}

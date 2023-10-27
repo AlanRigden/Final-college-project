@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - Health Advice group</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <nav>
+
+        <a class="nav_link" href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='/images/logo.png') }}" alt="logo and home button" style="width:220px;height:137px;"></a>
+
+        <a class="nav_link" href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='/images/home.png') }}" alt="home button" style="width:91px;height:91px;"></a>
+
+        <a class="nav_link" href="{{ url_for('about')}}"><img src="{{ url_for('static', filename='/images/info.png') }}" alt="about button" style="width:91px;height:91px;"></a>
+
+        <a class="nav_link" href="{{ url_for('donate')}}"><img src="{{ url_for('static', filename='/images/donate.png') }}" alt="donate button" style="width:91px;height:91px;"></a>
+
+        {% if current_user.is_authenticated==False %}
+
+        <a class="nav_link" href="{{ url_for('login')}}"><img src="{{ url_for('static', filename='/images/login.png') }}" alt="login button" style="width:48px;height:48px;"> Login </a>
+
+        <a class="nav_link" href="{{ url_for('register')}}"><img src="{{ url_for('static', filename='/images/register.png') }}" alt="register button" style="width:48px;height:48px;">Register</a>
+
+        {% endif %}
+
+        {% if current_user.is_authenticated %}
+
+        <a class="nav_link" href="{{ url_for('logout')}}"><img src="{{ url_for('static', filename='/images/logout.png') }}" alt="logout button" style="width:48px;height:48px;">Logout Here</a>
+
+        {% endif %}
+
+    </nav>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

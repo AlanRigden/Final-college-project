@@ -1,0 +1,12 @@
+﻿{% extends 'base.html' %} {% block content %} 
+{% block title %} Home page {% endblock %}
+{% if current_user.is_authenticated %} 
+ 
+dashboard
+ 
+diary
+{% endif %}  
+common allergens
+ 
+weather advice
+{% endblock %}

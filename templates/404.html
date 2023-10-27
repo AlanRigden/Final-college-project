@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="title">
+<h1>{% block title %} Home page {% endblock %}</h1>
+</div>
+
+<div class="wide_warn">
+    error 404
+    page not found
+</div>
+<p>this is not the page you were looking for</p>
+<iframe src="https://giphy.com/embed/l2JJKs3I69qfaQleE" width="480" height="218" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/starwars-movie-star-wars-l2JJKs3I69qfaQleE">via GIPHY</a></p>
+<a class="" href="{{ url_for('index')}}">this place is pretty cool though</a>
+
+{% endblock %}

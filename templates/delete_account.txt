@@ -1,0 +1,5 @@
+﻿{% extends 'base.html' %} {% block content %} 
+{% block title %} delete account {% endblock %}
+when deleting your account you will also be deleting all diary entries
+Delete account
+{% endblock %}

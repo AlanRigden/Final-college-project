@@ -1,0 +1,12 @@
+﻿{% extends 'base.html' %} {% block content %} 
+{% block title %} {{ current_user.username }}'s Diary {% endblock %}
+Delete account new diary entry 
+{% for entry in entries %} {% if current_user.id == entry.user_id %} 
+{{ entry.title }}
+description:
+{{ entry.description }}
+step count:
+{{ entry.step_count }}
+Delete entry
+{% endif %} {% endfor %} 
+{% endblock %}

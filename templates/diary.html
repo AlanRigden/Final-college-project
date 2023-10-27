@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} {{ current_user.username }}'s Diary {% endblock %}</h1>
+<a class="delete_val" href="{{ url_for('delete_account')}}">Delete account</a>
+<button onclick="location.href='{{ url_for('new_entry')}}'" type="button">
+    new diary entry
+</button>
+<div class="diary_container">
+  {% for entry in entries %}
+    {% if current_user.id == entry.user_id %}
+    <div class="diary_blob">
+      <!-- <p>Entry: {{entry.entryID}}</p> -->
+      <div class="whitish_blob">
+        <p>{{ entry.title }}</p>
+      </div>
+      <p>description:</p>
+        <div class="whitish_blob">
+          <p>{{ entry.description }}</p>
+        </div>
+      <p>step count:</p>
+        <div class="whitish_blob">
+          <p>{{ entry.step_count }}</p>
+        </div>
+        <a class="delete_val" href="{{ url_for('delete_entry',entryID=entry.entryID)}}">Delete entry</a>
+
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}

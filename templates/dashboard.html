@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="title">
+  <h1>{% block title %} Dashboard for {{location}}{% endblock %}</h1>
+  <h5>The average temperature of the day is: {{ avg_temp }} °c</h5>
+
+</div>
+<div class="test">
+  <img onmouseover="bigImgTemp(this)" onmouseout="normalImgTemp(this)" src="/static/images/temp.png" alt="temperature graph">
+
+    {% for pollen,average in pollen_avgs %}
+      <div class="egg_blob">
+        <div class="whitish_blob">
+          <p>{{ pollen }}</p>
+        </div>
+        <p>{{ average }} grains/m³</p>
+      </div>
+    {% endfor %}
+</div>
+
+<img src="/static/images/air_quality.png" alt="air quality graph">
+
+
+<div class="diary_container">
+
+<img src="/static/images/rain.png" alt="rain graph">
+
+  {% if avg_temp < 2 %}
+  <div class="diary_blob">
+    <p>due to the low temperature:</p>
+    <a href="https://www.nhs.uk/live-well/seasonal-health/keep-warm-keep-well/#:~:text=Keep%20warm%20and%20get%20help,temperature%20that's%20comfortable%20for%20you"> low temperatures</a>
+  </div>
+  {% endif %}
+
+  {% if avg_temp > 15 %}
+  <div class="diary_blob">
+    <p>due to the high temperature:</p>
+    <a href="https://www.nhs.uk/live-well/seasonal-health/sunscreen-and-sun-safety/"> high temperatures</a>
+  </div>
+  {% endif %}
+
+  {% if avg_temp > 20 %}
+  <div class="diary_blob">
+    <p>due to the high temperature:</p>
+    <a href="https://www.nhs.uk/live-well/seasonal-health/heatwave-how-to-cope-in-hot-weather/"> high temperatures</a>
+  </div>
+  {% endif %}
+</div>
+
+<script>
+function bigImgTemp(x) {
+  x.style.width = "800px";
+  x.style.height = "600px";
+}
+
+function normalImgTemp(x) {
+  x.style.width = "640px";
+  x.style.height = "480px";
+}
+
+</script>
+{% endblock %}

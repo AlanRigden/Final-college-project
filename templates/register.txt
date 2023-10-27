@@ -1,0 +1,12 @@
+﻿{% extends 'base.html' %} {% block content %} 
+{% block title %} Register {% endblock %}
+email      
+Username      
+password      
+submit [Submit]
+Already Have an Account?
+
+login {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %} 
+{{ message }}
+{% endfor %} {% endif %} {% endwith %} 
+{% endblock %}

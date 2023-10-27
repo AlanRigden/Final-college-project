@@ -1,0 +1,11 @@
+﻿{% extends 'base.html' %} {% block content %} 
+by logging in into this website you are agreeing to the use of essential cookies
+{% block title %} login {% endblock %}
+email      
+password      
+submit [Submit]
+Dont Have an account??
+register {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %} 
+{{ message }}
+{% endfor %} {% endif %} {% endwith %} 
+{% endblock %}

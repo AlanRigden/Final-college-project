@@ -1,0 +1,6 @@
+﻿{% extends 'base.html' %} {% block content %} 
+{% block title %} Home page {% endblock %}
+error 404 page not found 
+this is not the page you were looking for
+via GIPHY
+this place is pretty cool though {% endblock %}

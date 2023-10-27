@@ -1,0 +1,19 @@
+﻿{% extends 'base.html' %} {% block content %} 
+{% block title %} Dashboard for {{location}}{% endblock %}
+The average temperature of the day is: {{ avg_temp }} °c
+ {% for pollen,average in pollen_avgs %} 
+{{ pollen }}
+{{ average }} grains/m³
+{% endfor %} 
+ 
+ {% if avg_temp < 2 %} 
+due to the low temperature:
+low temperatures
+{% endif %} {% if avg_temp > 15 %} 
+due to the high temperature:
+high temperatures
+{% endif %} {% if avg_temp > 20 %} 
+due to the high temperature:
+high temperatures
+{% endif %} 
+{% endblock %}

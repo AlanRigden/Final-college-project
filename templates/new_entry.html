@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="entries">
+
+<h1>{% block title %} Diary {% endblock %}</h1>
+
+<form action="" method = "POST">
+    <p>Title <input type = "title" name = "title" /></p>
+    <p>Description</p>
+    <textarea type = "text" cols="40" rows="5" name = "description"></textarea>
+
+    <p>Step Count <input type = "number" name = "steps" /></p>
+    <p> submit <input type = "submit" value = "Submit" /></p>
+</form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+            <div class="warn">
+                <p>{{ message }}</p>
+            </div>
+              {% endfor %}
+           {% endif %}
+        {% endwith %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+﻿{% extends 'base.html' %} {% block content %} 
+{% block title %} Common allergens {% endblock %}
+pollen
+
+
+
+dust
+
+
+
+pets
+
+
+
+cigarette smoke
+
+
+
+asthma
+
+{% endblock %}

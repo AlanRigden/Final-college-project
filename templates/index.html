@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="title">
+<h1>{% block title %} Home page {% endblock %}</h1>
+</div>
+
+{% if current_user.is_authenticated %}
+
+<div>
+    <div class="test">
+        <button class="options" onclick="location.href='{{ url_for('dashboard_loc')}}'" type="button">
+            <img src="static/images/weather-splash.png" alt="weather image" style="width:512px;height:512px;">
+            <div class="blocker">dashboard</div>
+        </button>
+        <button class="options" onclick="location.href='{{ url_for('diary')}}'" type="button">
+            <img src="static/images/diary.png" alt="diary image" style="width:512px;height:512px;">
+            <div class="blocker">diary</div>
+        </button>
+    </div>
+</div>
+{% endif %}
+<button class="options" onclick="location.href='{{ url_for('allergens')}}'" type="button">
+    <img src="static/images/sneezing.jpg" alt="someone sneezing" style="width:512px;height:512px;">
+    <div class="blocker">common allergens</div>
+</button>
+<button class="options" onclick="location.href='{{ url_for('weather')}}'" type="button">
+    <img src="static/images/alert.png" alt="someone sneezing" style="width:512px;height:512px;">
+    <div class="blocker">weather advice</div>
+</button>
+
+<div>
+
+
+</div>
+
+{% endblock %}

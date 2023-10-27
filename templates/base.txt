@@ -1,0 +1,2 @@
+﻿{% if current_user.is_authenticated==False %}  Login Register {% endif %} {% if current_user.is_authenticated %} Logout Here {% endif %} 
+{% block content %} {% endblock %} 

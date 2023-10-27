@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div class="wide_warn">
+    <p>by logging in into this website you are agreeing to the use of essential cookies</p>
+</div>
+<div class="entries">
+
+    <h1>{% block title %} login {% endblock %}</h1>
+    <form action="" method = "POST">
+        <p>email <input type = "email" name = "email" /></p>
+        <p>password <input type = "password" name = "password" /></p>
+        <p> submit <input type = "submit" value = "Submit" /></p>
+    </form>
+
+    <h4>Dont Have an account??</h4>
+    <button onclick="location.href='{{ url_for('register')}}'" type="button">
+        register
+    </button>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+            <div class="warn">
+                <p>{{ message }}</p>
+            </div>
+              {% endfor %}
+           {% endif %}
+        {% endwith %}
+</div>
+{% endblock %}

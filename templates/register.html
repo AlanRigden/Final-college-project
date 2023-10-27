@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="entries">
+
+    <h1>{% block title %} Register {% endblock %}</h1>
+
+    <form action="" method = "POST">
+        <p>email <input type = "email" name = "email" /></p>
+        <p>Username <input type = "text" name = "username" /></p>
+        <p>password <input type = "password" name = "password" /></p>
+        <p> submit <input type = "submit" value = "Submit" /></p>
+    </form>
+
+    <h4>Already Have an Account?</h4><br>
+
+    <button onclick="location.href='{{ url_for('login')}}'" type="button">
+        login
+    </button>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              {% for message in messages %}
+            <div class="flag">
+                <p>{{ message }}</p>
+            </div>
+              {% endfor %}
+           {% endif %}
+        {% endwith %}
+
+</div>
+{% endblock %}

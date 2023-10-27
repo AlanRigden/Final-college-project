@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{% block title %} delete account {% endblock %}</h1>
+
+<div class="entries">
+    <p>when deleting your account you will also be deleting all diary entries</p>
+
+    <a class="delete_val" href="{{ url_for('del_account',id=current_user.id)}}">Delete account</a>
+  </div>
+
+{% endblock %}
